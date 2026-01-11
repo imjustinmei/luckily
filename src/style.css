@@ -1,0 +1,238 @@
+:root {
+  --body: #fff2b1;
+  --main: #ffffff;
+  --border-main: #ffffff;
+  --name-bg: #ffffff;
+  --name-border: #b1d9ff;
+  --name-text: #000000;
+  --name-placeholder: #888888;
+  --button-bg: #b1d9ff;
+  --button-bg-hover: #cbe5ff;
+  --button-text: #1b1a55;
+  --break-bg: #b1b2ff;
+  --entry-bg: #ffffff;
+  --entry-border: #ffffff;
+  --entry-text: #000000;
+  --message-bg: #f6f6f6;
+  --message-text: #fc5185;
+  --theme: #ffe87f;
+  --success: #222831;
+  --info: #393e46;
+}
+
+[data-theme="dark"] {
+  --body: #212a3e;
+  --main: #526d82;
+  --border-main: #526d82;
+  --name-bg: #9db2bf;
+  --name-border: #9db2bf;
+  --name-text: #e3fdfd;
+  --name-placeholder: #bbe1fa;
+  --button-bg: #b1d9ff;
+  --button-bg-hover: #cbe5ff;
+  --button-text: #1b1a55;
+  --break-bg: #b1b2ff;
+  --entry-bg: #9db2bf;
+  --entry-border: #9db2bf;
+  --entry-text: #0a2647;
+  --message-bg: #f6f6f6;
+  --message-text: #fc5185;
+  --theme: #27374d;
+  --success: #e3fdfd;
+  --info: #f3eeea;
+}
+
+body {
+  margin-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--body);
+}
+
+* {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#content {
+  margin: 0 auto;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  border-radius: 10px;
+  padding: 0.4em 1em;
+  font-size: 1.8em;
+  background-color: var(--main);
+  border: 3px solid var(--border-main);
+}
+
+#name {
+  font-size: 1.05em;
+  width: 480px;
+  padding: 5px 5px 5px 8px;
+  word-spacing: -2px;
+  border-radius: 10px;
+  background-color: var(--name-bg);
+  border: 3px solid var(--name-border);
+  color: var(--name-text);
+  caret-color: #3282b8;
+}
+
+#name::placeholder {
+  color: var(--name-placeholder);
+}
+
+#name:focus {
+  outline: none !important;
+}
+
+#button {
+  font-size: 1em;
+  padding: 0 1em;
+  background-color: var(--button-bg);
+  border: 3px solid var(--button-bg);
+  color: var(--button-text);
+}
+
+#button:hover {
+  cursor: pointer;
+  background-color: var(--button-bg-hover);
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  margin: 0.5em auto;
+  width: 90%;
+}
+
+#yours {
+  margin-top: 1em;
+}
+
+#break {
+  height: 5px;
+  border-radius: 3px;
+  border: none;
+  background-color: var(--break-bg);
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4em;
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
+  background-color: var(--entry-bg);
+  border: 1px solid var(--entry-border);
+  color: var(--entry-text);
+}
+
+.name {
+  white-space: nowrap;
+  min-width: 20px;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+.count {
+  direction: rtl;
+}
+
+#messages {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.2em;
+}
+
+.message {
+  width: 200px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: var(--message-bg);
+  color: var(--message-text);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.message:hover {
+  cursor: pointer;
+}
+
+.message.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#theme {
+  position: fixed;
+  bottom: 5px;
+  left: 10px;
+  font-size: 1.2em;
+  color: var(--theme);
+}
+
+#info {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  font-size: 1.5em;
+  color: var(--info);
+}
+
+#info:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#modal {
+  z-index: 1;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#interior {
+  margin: 2em auto;
+  padding: 1em 2em;
+  height: 250px;
+  width: 600px;
+  background-color: #f9f7f7;
+  border: 2px solid #393e46;
+  word-spacing: -2px;
+}
+
+#citation,
+#citation:visited {
+  color: #a6e3e9;
+}
+
+#citation:focus {
+  outline: none;
+}
+
+#success {
+  font-size: 2em;
+  margin: 0.5em auto;
+  color: var(--success);
+}

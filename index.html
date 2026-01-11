@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>luckily</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/theme.js"></script>
+  </head>
+  <body>
+    <div id="success" class="rounded"></div>
+    <div id="modal" class="hidden">
+      <div id="interior" class="rounded">
+        Every roll generates a universally unique identifier (UUID), a practically unique sequence of 122 bits.
+        <br /><br />
+        <div style="margin-left: 20px">
+          "[after] generating 1 billion UUIDs every second for approximately 100 years would the probability of creating a single duplicate reach 50%" -
+          <a id="citation" href="https://en.wikipedia.org/w/index.php?title=Universally_unique_identifier&oldid=755882275#Random_UUID_probability_of_duplicates">Wikipedia</a>
+        </div>
+        <br />
+        But the goal isn't any duplicate but a one-in-2<sup>122</sup> chance for the correct one. Do you persist despite infinity or do you drop a racial slur?
+      </div>
+    </div>
+    <span id="info">?</span>
+    <div id="messages"></div>
+    <div id="content">
+      <div id="main" class="rounded">
+        <input id="name" class="rounded" type="text" minlength="1" maxlength="15" placeholder="type a name" />
+        <button id="button" class="rounded">roll!</button>
+      </div>
+      <div id="yours" class="collection"></div>
+      <hr id="break" />
+      <div id="attempts" class="collection"></div>
+    </div>
+    <span id="theme"></span>
+  </body>
+  <script type="module" src="/src/main.js"></script>
+</html>
